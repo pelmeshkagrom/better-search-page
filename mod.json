@@ -1,11 +1,12 @@
 {
 	"geode": "4.2.0",
 	"gd": {
-		"win": "2.2074"
+		"win": "2.2074",
+		"android": "2.2074"
 	},
 	"id": "pelmeshkagrom.better-search-page",
 	"name": "Better Search Page",
-	"version": "v1.0.1",
+	"version": "v1.0.2",
 	"dependencies": {
 		"geode.node-ids": ">=v1.19.0"
 	},
