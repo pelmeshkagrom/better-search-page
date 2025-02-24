@@ -1,3 +1,3 @@
-# v1.0.1
+# v1.0.2
 
- * Fixed incorrect positioning of elements on certain screen resolutions
+ * Added android support
