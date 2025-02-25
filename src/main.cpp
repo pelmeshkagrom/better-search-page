@@ -2,7 +2,7 @@
 
 using namespace geode::prelude;
 
-class $modify(MyLevelSearchLayer, LevelSearchLayer) {
+class $modify(BSPLevelSearchLayer, LevelSearchLayer) {
 	static void onModify(auto& self) {
 		if (Loader::get()->isModLoaded("devcmb.cleanermenu")) (void) self.setHookPriorityAfterPost("LevelSearchLayer::init", "devcmb.cleanermenu");
 		else (void) self.setHookPriority("LevelSearchLayer::init", -3001);
@@ -68,16 +68,7 @@ class $modify(MyLevelSearchLayer, LevelSearchLayer) {
 		
 		CCNode* searchButtonMenu = this->getChildByID("search-button-menu");
 		if (!searchButtonMenu) return;
-		// just... no. why??
-		/*
-		searchButtonMenu->setLayout(
-			RowLayout::create()
-        		->setAxisAlignment(AxisAlignment::End)
-				->setGap(7.0f)
-		);
-		searchButtonMenu->setContentWidth(levelSearchBg->getContentWidth() - 11.0f);
-		searchButtonMenu->updateLayout();
-		*/
+		
 		if (cleanerMenu && !cleanerMenu->getSettingValue<bool>("revertSearchPageChanges")) {
 			levelSearchBg->setPositionY(levelSearchBGPosY + 15.0f);
 			searchButtonMenu->setPositionY(searchButtonMenu->getPositionY() - 229.0f);
@@ -93,7 +84,7 @@ class $modify(MyLevelSearchLayer, LevelSearchLayer) {
 	bool init(int p0) {
 		if (!LevelSearchLayer::init(p0)) return false;
 
-		MyLevelSearchLayer::moveStuff();
+		BSPLevelSearchLayer::moveStuff();
 
 		return true;
 	}
